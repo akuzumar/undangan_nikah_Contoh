@@ -6,11 +6,63 @@
     --soft-bg: #F5F5F7;
 }
 
+
+
+
+
+
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Mencegah geser kanan-kiri */
+    position: relative;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+
+
+
+
+
+
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 
 /* Global Centered Headings */
-h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--gold); text-align: center; margin-bottom: 50px; width: 100%; }
+/* Ubah h2 agar tidak memaksa lebar 100% jika ada padding */
+h2 { 
+    font-family: 'Cinzel', serif; 
+    font-size: 2.5rem; 
+    color: var(--gold); 
+    text-align: center; 
+    margin-bottom: 50px; 
+    max-width: 100%; /* Ubah dari width: 100% menjadi max-width */
+}
+
+/* Pastikan Gallery Grid tidak melebar */
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Kecilkan minmax sedikit */
+    gap: 20px; 
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Navigation */
 .apple-nav {
@@ -150,8 +202,23 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 3rem; }
-    .map-box { height: 300px; width: 95%; }
-    .apple-nav { padding: 10px 15px; gap: 12px; }
-    .nav-item span { display: none; }
+    .hero h1 { font-size: 2.5rem; } /* Kecilkan sedikit h1 di mobile */
+    
+    .mempelai, .acara, .lokasi, .gallery, .rsvp, .gift { 
+        padding: 80px 15px; /* Perkecil padding samping di mobile */
+    }
+
+    .mempelai-container {
+        gap: 30px;
+    }
+
+    .profile-img-container {
+        width: 220px; /* Kecilkan ukuran foto di mobile */
+        height: 300px;
+    }
+
+    .map-box { 
+        height: 250px; 
+        width: 100%; 
+    }
 }
