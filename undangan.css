@@ -1,0 +1,105 @@
+:root {
+    --gold: #D4AF37;
+    --dark: #1D1D1F;
+    --grey: #86868B;
+    --white: #FFFFFF;
+    --soft-bg: #F5F5F7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+
+/* Global Centered Headings */
+h2 { font-family: 'Cinzel', serif; font-size: 2.5rem; color: var(--gold); text-align: center; margin-bottom: 50px; width: 100%; }
+
+/* Navigation */
+.apple-nav {
+    position: fixed; bottom: 25px; left: 50%; transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    display: flex; gap: 20px; padding: 12px 25px; border-radius: 40px;
+    z-index: 9999; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+.nav-item { text-decoration: none; color: var(--grey); font-size: 10px; display: flex; flex-direction: column; align-items: center; transition: 0.3s; }
+.nav-item i { font-size: 18px; margin-bottom: 4px; }
+.nav-item:hover, .nav-item.active { color: var(--gold); transform: translateY(-3px); }
+
+/* Hero Section */
+.hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.hero-bg-blur {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2000');
+    background-size: cover; background-position: center; filter: blur(8px); transform: scale(1.1);
+}
+.hero-content { position: relative; color: white; text-align: center; }
+.hero h1 { font-family: 'Cinzel', serif; font-size: 4.5rem; letter-spacing: 5px; margin: 15px 0; }
+.hero .subtitle { letter-spacing: 4px; font-weight: 300; font-size: 0.9rem; }
+.hero .date { font-size: 1.5rem; letter-spacing: 3px; font-weight: 200; }
+.scroll-hook { margin-top: 60px; }
+.mouse-icon { width: 26px; height: 42px; border: 2px solid white; border-radius: 15px; margin: 10px auto; position: relative; }
+.mouse-icon::before { content: ''; position: absolute; width: 4px; height: 8px; background: white; left: 50%; transform: translateX(-50%); top: 7px; border-radius: 2px; animation: scrollAnim 2s infinite; }
+@keyframes scrollAnim { 0% { top: 7px; opacity: 1; } 100% { top: 25px; opacity: 0; } }
+
+/* Mempelai */
+.mempelai { padding: 120px 5%; background: var(--soft-bg); text-align: center; }
+.mempelai-container { display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 40px; }
+.profile-img-container { width: 280px; height: 380px; border-radius: 140px; overflow: hidden; border: 6px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.08); margin: 0 auto 25px; }
+.profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+.love-divider { font-size: 35px; color: var(--gold); padding: 20px; }
+.profile h3 { font-family: 'Cinzel', serif; margin-bottom: 10px; color: var(--dark); }
+.parent { font-size: 0.9rem; color: var(--grey); margin-bottom: 10px; }
+.bio { font-style: italic; font-size: 0.85rem; max-width: 250px; margin: 0 auto; color: var(--gold); }
+
+/* Acara */
+.acara { background: var(--dark); color: white; text-align: center; padding: 120px 5%; }
+.event-wrapper { display: flex; flex-direction: column; align-items: center; gap: 50px; }
+.event-item i { font-size: 35px; color: var(--gold); margin-bottom: 15px; }
+.divider-gold { width: 80px; height: 1px; background: var(--gold); opacity: 0.5; }
+
+/* Lokasi */
+.lokasi { padding: 120px 5%; text-align: center; }
+.map-box { width: 100%; max-width: 920px; height: 450px; margin: 0 auto 40px; border-radius: 24px; overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.1); }
+.map-box iframe { width: 100%; height: 100%; border: 0; }
+.apple-button { background: var(--gold); color: white; padding: 16px 45px; border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.4s; display: inline-block; }
+.apple-button:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+
+/* Gallery */
+.gallery { padding: 120px 5%; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.gallery-item { position: relative; border-radius: 20px; overflow: hidden; border: 10px solid white; box-shadow: 0 15px 35px rgba(0,0,0,0.1); transition: 0.5s; }
+.gallery-item img { width: 100%; height: 400px; object-fit: cover; transition: 0.6s; }
+.gallery-item span { position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.9); padding: 15px; font-weight: 600; text-align: center; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* RSVP */
+.rsvp { background: var(--soft-bg); padding: 120px 5%; display: flex; flex-direction: column; align-items: center; }
+.mac-popup { background: white; width: 100%; max-width: 600px; border-radius: 18px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.12); }
+.mac-header { background: #f0f0f0; padding: 14px; display: flex; gap: 8px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+.mac-content { padding: 50px; text-align: center; }
+.mac-content input, .mac-content select, .mac-content textarea { width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 10px; border: 1px solid #e0e0e0; font-family: inherit; background: #fafafa; }
+.apple-button-dark { background: var(--dark); color: white; width: 100%; padding: 16px; border-radius: 10px; border: none; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.apple-button-dark:hover { background: #333; }
+
+/* Gift Section */
+.gift { padding: 120px 5%; text-align: center; }
+.gift-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 60px 40px; margin-top: 50px; }
+.bank-item { width: 240px; text-align: center; }
+.bank-logo { width: 120px; height: 120px; border-radius: 50%; border: 2px solid var(--gold); margin: 0 auto 20px; background-size: 60%; background-position: center; background-repeat: no-repeat; transition: 0.4s; }
+.bank-logo:hover { transform: scale(1.1) rotate(5deg); }
+.acc-num { font-weight: 700; font-size: 1.1rem; color: var(--dark); margin-bottom: 5px; }
+.acc-name { color: var(--grey); font-size: 14px; display: block; margin-bottom: 30px; /* SPACE KOSONG SETELAH NAMA */ }
+
+/* Logo Mockups */
+.bca { background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Bank_Central_Asia.svg'); }
+.mandiri { background-image: url('https://upload.wikimedia.org/wikipedia/id/f/fa/Bank_Mandiri_logo.svg'); }
+.bri { background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2e/BRI_Logo.svg'); }
+.dana { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/72/Logo_dana_blue.svg'); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 3rem; }
+    .map-box { height: 300px; width: 95%; }
+    .apple-nav { padding: 10px 15px; gap: 12px; }
+    .nav-item span { display: none; }
+}
